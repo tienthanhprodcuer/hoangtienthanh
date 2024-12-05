@@ -1,17 +1,8 @@
-#!url=https://raw.githubusercontent.com/tienthanhprodcuer/hoangtienthanh/refs/heads/main/soundcloud.module
-#!name=SoundCloudGo+
-
-#!desc=HoangTienThanh
-
-[Script]
-
-SoundCloudGo+=type=http-response,pattern=https://api-mobile.soundcloud.com/configuration/ios,requires-body=1,script-path=https://raw.githubusercontent.com/Marol62926/MarScrpt/main/soundcloud.js
-
-[MITM]
-
-hostname= %APPEND% api-mobile.soundcloud.com
-
-
-
-
-
+﻿#!name=SoundCloudGo+
+#!desc=SoundCloudGo+
+[Script]
+SoundCloudGo+=type=http-response,pattern=https://api-mobile.soundcloud.com/configuration/ios,requires-body=1,script-path=https://raw.githubusercontent.com/Marol62926/MarScrpt/main/soundcloud.js
+[MITM]
+hostname= %APPEND% api-mobile.soundcloud.com
+
+
