@@ -53,6 +53,15 @@ Lightroom = type=http-response, pattern=^https:\/\/photos\.adobe\.io\/v2\/accoun
 # Bending Spoon Apps
 BendingSpoonApps = type=http-response, pattern=^https?:\/\/.*\.oracle\.bendingspoonsapps\.com\/v\d\/(users\/.+|purchases\/verify), script-path=https://raw.githubusercontent.com/quocchienn/YouTube_Spotify/refs/heads/module/bending.js, requires-body=true, max-size=-1, timeout=300
 
+# Wink
+Wink = type=http-response,pattern=^https?:\/\/api-sub\.meitu\.com\/v2\/user\/vip_info_by_group\.json,requires-body=1,script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/WinkForeverVipCrack.js, requires-body=true, max-size=-1, timeout=300
+
+# SoundCloud
+SoundCloud = type=http-response,pattern=https://api-mobile.soundcloud.com/configuration/ios,requires-body=1,script-path=https://raw.githubusercontent.com/Marol62926/MarScrpt/main/soundcloud.js, requires-body=true, max-size=-1, timeout=300
+
+# PicSart
+Picsart = type=http-response,pattern=https:\/\/api\.(picsart|meiease)\.c(n|om)\/users\/show\/me\.json,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/PicsArt.js, requires-body=true, max-size=-1, timeout=300
+
 
 [MITM]
-hostname = script.hub, *.script.hub, *.googlevideo.com, youtubei.googleapis.com, spclient.wg.spotify.com, api.revenuecat.com, nicegram.cloud, ap*.intsig.net, iap.etm.tech, premium*.truecaller.com, photos.adobe.io, *.oracle.bendingspoonsapps.com
+hostname = script.hub, *.script.hub, *.googlevideo.com, youtubei.googleapis.com, spclient.wg.spotify.com, api.revenuecat.com, nicegram.cloud, ap*.intsig.net, iap.etm.tech, premium*.truecaller.com, photos.adobe.io, *.oracle.bendingspoonsapps.com, api-mobile.soundcloud.com, api-sub.meitu.com, api.picsart.c*, api.meiease.c*
