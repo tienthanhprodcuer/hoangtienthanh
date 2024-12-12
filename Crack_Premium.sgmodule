@@ -1,10 +1,21 @@
-#!url=https://raw.githubusercontent.com/tienthanhprodcuer/hoangtienthanh/refs/heads/main/Crack_Premium.sgmodule
-#!name= Crack_Premium
-#!desc= HoangTienThanh
+# Shadowrocket: 2024-12-12 08:08:21
+[General]
+private-ip-answer = false
+include = HoangTienThanh.conf
+bypass-system = true
+skip-proxy = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, localhost, *.local, captive.apple.com
+tun-excluded-routes = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.0.0.0/24, 192.0.2.0/24, 192.88.99.0/24, 192.168.0.0/16, 198.51.100.0/24, 203.0.113.0/24, 224.0.0.0/4, 255.255.255.255/32, 239.255.255.250/32
+dns-server = 203.119.8.93,203.190.171.28,203.113.131.6,8.8.8.8,1.1.1.1
+fallback-dns-server = 8.8.8.8,9.9.9.11,1.1.1.1,203.119.8.93,203.190.171.28,203.113.131.6
+ipv6 = false
+prefer-ipv6 = false
+update-url = https://raw.githubusercontent.com/tienthanhprodcuer/hoangtienthanh/refs/heads/main/HoangTienThanh.conf
 
 [Rule]
 AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
 AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
+IP-CIDR,0.0.0.0/32,REJECT,no-resolve
+FINAL,DIRECT
 
 [URL Rewrite]
 (^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) $1$2$3 302
@@ -16,25 +27,21 @@ AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
 [Script]
 # Youtube_Premium
 youtube-response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch),requires-body=1,max-size=-1,binary-body-mode=1,engine={{{脚本执行引擎}}},script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.preview.js,argument="{"lyricLang":"{{{歌词翻译语言}}}","captionLang":"{{{字幕翻译语言}}}","blockUpload":{{{屏蔽上传按钮}}},"blockImmersive":{{{屏蔽选段按钮}}},"debug":{{{启用调试模式}}}}"
-
 # Locket_GoLd
 revenuecat = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/vuong2023/shad/main/js/Locket_Ohoang7.js, requires-body=true, max-size=-1, timeout=60
-
 deleteHeader = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/vuong2023/shad/main/js/deleteHeader.js, timeout=60
-
 # Picsart
 Picsart = type=http-response,pattern=https:\/\/api\.(picsart|meiease)\.c(n|om)\/users\/show\/me\.json,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/PicsArt.js
-
 # SoundCloud Go+
 SoundCloudGo+ = type=http-response,pattern=https://api-mobile.soundcloud.com/configuration/ios,requires-body=1,script-path=https://raw.githubusercontent.com/Marol62926/MarScrpt/main/soundcloud.js
-
 # Spotify_Premium
 spotify-json = type=http-request,type=http-request,pattern=^https:\/\/spclient\.wg\.spotify\.com\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/,requires-body=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-json.js
 spotify-proto = type=http-response,pattern=^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$,requires-body=1,binary-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js,script-update-interval=0
-
 # Wink_Premium
 WinkForeverVipCrack.js = type=http-response,pattern=^https?:\/\/api-sub\.meitu\.com\/v2\/user\/vip_info_by_group\.json,requires-body=1,script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/WinkForeverVipCrack.js
 
-
 [MITM]
 hostname = %APPEND% -redirector*.googlevideo.com,*.googlevideo.com,www.youtube.com,s.youtube.com,youtubei.googleapis.com,%APPEND% api.revenuecat.com, api.revenuecat.com,%APPEND% api.picsart.c*, api.meiease.c*,%APPEND% api-mobile.soundcloud.com, api-mobile.soundcloud.com,%APPEND% spclient.wg.spotify.com, spclient.wg.spotify.com,%APPEND% api-sub.meitu.com, api-sub.meitu.com
+enable = true
+ca-passphrase = Shadowrocket
+ca-p12 = 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
