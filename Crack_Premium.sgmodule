@@ -38,3 +38,4 @@ WinkForeverVipCrack.js = type=http-response,pattern=^https?:\/\/api-sub\.meitu\.
 
 [MITM]
 hostname = %APPEND% -redirector*.googlevideo.com,*.googlevideo.com,www.youtube.com,s.youtube.com,youtubei.googleapis.com,%APPEND% api.revenuecat.com, api.revenuecat.com,%APPEND% api.picsart.c*, api.meiease.c*,%APPEND% api-mobile.soundcloud.com, api-mobile.soundcloud.com,%APPEND% spclient.wg.spotify.com, spclient.wg.spotify.com,%APPEND% api-sub.meitu.com, api-sub.meitu.com
+arrow
